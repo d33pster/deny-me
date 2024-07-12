@@ -1,4 +1,4 @@
-from deny_me.password import Password, PassowrdError, ProtectedError
+from deny_me.password import Password, PasswordError, ProtectedError
 
 def test_pass():
 
@@ -21,7 +21,7 @@ def test_pass():
 
     try:
         value = a.function(password="hehe")
-    except PassowrdError:
+    except PasswordError:
         check = True
     
     assert check == True
