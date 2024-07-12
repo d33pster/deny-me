@@ -92,6 +92,33 @@ class Demo:
         ...
 ```
 
+- **Run custom times**
+
+To run a function n times.
+
+> import the Allow class.
+
+```python
+from deny_me.restrict import Allow
+```
+
+> run n=10 times
+
+```python
+# demo function
+# this function will run 10 times
+
+class Demo:
+    def __init__(Self):
+        ...
+    
+    @Allow(10).times
+    def function(self, *args, **kwargs):
+        ...
+```
+
+> Note: Similar to the Once/Twice decorators, If other decorators are needed, such as `property`, then it should be at the top and the `Allow(n).times` should be the last decorator.
+
 - **Password Protection**
 
 To make your function password protected.
