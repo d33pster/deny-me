@@ -41,17 +41,21 @@ from deny_me.restrict import once, twice
 # demo function
 # This function will be callable only once.
 # Repeated calling will generate error.
-@once
-def function1(name: str, school: str = "ABC"):
-    print(f"{name} goes to {school}!")
-    ...
+class some_class:
+    def __init__(self):
+        ...
 
-# demo funtion 2
-# This function will be callable two times.
-# will generate error if called more than twice
-@twice
-def function2(*args, **kwargs):
-    ...
+    @once
+    def function1(self, name: str, school: str = "ABC"):
+        print(f"{name} goes to {school}!")
+        ...
+
+    # demo funtion 2
+    # This function will be callable two times.
+    # will generate error if called more than twice
+    @twice
+    def function2(self, *args, **kwargs):
+        ...
 ```
 
 > **Note to the users.**
@@ -95,30 +99,28 @@ To make your function password protected.
 from deny_me.password import Password
 ```
 
-> Define a password.
-
-```python
-password = Password("pass123")
-```
-
 > Use the password decorator.
 
 ```python
 # demo function
 # this function will be password protected.
-@password.protected
-def function(*args, **kwargs):
-    ...
+class some_class:
+    def __init__(self):
+        ...
 
-# It is recommended that the above function has `*args` 
-# and `**kwargs` in its parameters.
-# If some parameters are mandatory, they can be defined before 
-# mentioning `*args` and `**kwargs`.
-## FOR EXAMPLE:
+    @Password("pass123").protected
+    def function(*args, **kwargs):
+        ...
 
-@password.protected
-def function(name: str, school: str = "ABC", *args, **kwargs):
-    ... 
+    # It is recommended that the above function has `*args` 
+    # and `**kwargs` in its parameters.
+    # If some parameters are mandatory, they can be defined before 
+    # mentioning `*args` and `**kwargs`.
+    ## FOR EXAMPLE:
+
+    @Password("pass123").protected
+    def function(name: str, school: str = "ABC", *args, **kwargs):
+        ... 
 ```
 
 > **How to call the function?**
@@ -127,7 +129,8 @@ def function(name: str, school: str = "ABC", *args, **kwargs):
 # To call the function, just add `password=` parameter 
 # while calling.
 
-function(name="hehe", password="pass123")
+c = some_class()
+c.function(name="hehe", password="pass123")
 
 # This will run fine as the password is correct!
 # However, if the password is wrong, it will

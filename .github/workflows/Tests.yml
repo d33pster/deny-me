@@ -1,0 +1,28 @@
+# This workflow continuously tests for breakage in code due to new updates.
+
+name: Implementation Test
+
+on:
+    push:
+        branches: ["main"]
+
+jobs:
+    test_:
+
+        runs-on: ubuntu-latest
+
+        steps:
+        - uses: actions/checkout@v4
+        - name: Set up python
+          uses: actions/setup-python@v3
+          with:
+            python-version: "3.12"
+
+        - name: Install Dependencies
+          run: |
+            python -m pip install --upgrade pip
+            pip install pytest
+            pip install .
+        
+        - name: Test
+          run: pytest
