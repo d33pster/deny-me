@@ -1,4 +1,5 @@
 [![Implementation Test](https://github.com/d33pster/deny-me/actions/workflows/Tests.yml/badge.svg)](https://github.com/d33pster/deny-me/actions/workflows/Tests.yml)
+[![CD](https://github.com/d33pster/deny-me/actions/workflows/Deploy.yml/badge.svg)](https://github.com/d33pster/deny-me/actions/workflows/Deploy.yml)
 
 # Overview
 
