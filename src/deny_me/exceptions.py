@@ -1,5 +1,5 @@
 
-class PassowrdError(Exception):
+class PasswordError(Exception):
     pass
 
 class ProtectedError(Exception):
