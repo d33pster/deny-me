@@ -1,3 +1,5 @@
+[![Implementation Test](https://github.com/d33pster/deny-me/actions/workflows/Tests.yml/badge.svg)](https://github.com/d33pster/deny-me/actions/workflows/Tests.yml)
+
 # Overview
 
 You must have often wondered about how to make a function restricted to the user so that it could only be called a specific number of time, or even a function that is password protected.
