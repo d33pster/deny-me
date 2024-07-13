@@ -5,9 +5,9 @@ name: Continuous Integration
 on:
   push:
       branches:
-          - <*<
-          - <*/*<
-          - <**<
+          - "*"
+          - "*/*"
+          - "**"
 
 permissions: read-all
 
