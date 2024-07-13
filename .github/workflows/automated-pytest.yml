@@ -16,4 +16,4 @@ jobs:
       runs-on: ubuntu-latest
 
       steps:
-      - uses: d33pster/automated-pytest@v1
+      - uses: d33pster/automated-pytest@v1.1
