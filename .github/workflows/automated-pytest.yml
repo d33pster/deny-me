@@ -1,0 +1,19 @@
+# This workflow will continuously run pytest on each push 
+
+name: Continuous Integration
+
+on:
+  push:
+      branches:
+          - <*<
+          - <*/*<
+          - <**<
+
+permissions: read-all
+
+jobs:
+  continuous_integration:
+      runs-on: ubuntu-latest
+
+      steps:
+      - uses: d33pster/automated-pytest@v1
